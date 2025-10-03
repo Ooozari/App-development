@@ -21,15 +21,26 @@ class MyWidget extends StatelessWidget {
           backgroundColor: Colors.black87,
           foregroundColor: Colors.white,
         ),
-        body: const Center(
-          child: Text(
-            'Uzair Asif',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.orange,
+        body: const Column(
+          children: [
+            Text(
+              'Uzair Asif',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.orange,
+              ),
             ),
-          ),
+            SizedBox(height: 20),
+            Text(
+              '22-NTU-CS-1213',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.orange,
+              ),
+            ),
+          ],
         ),
       ),
     );
