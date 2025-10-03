@@ -21,7 +21,7 @@ class MyWidget extends StatelessWidget {
           backgroundColor: Colors.black87,
           foregroundColor: Colors.white,
         ),
-        body: const Column(
+        body: Column(
           children: [
             Text(
               'Uzair Asif',
@@ -39,6 +39,11 @@ class MyWidget extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Colors.orange,
               ),
+            ),
+            Image.network(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0lBtoaipoqNb4tav3ZUUdREgVNv_BafUScA&s',
+              width: 200,
+              height: 200,
             ),
           ],
         ),
