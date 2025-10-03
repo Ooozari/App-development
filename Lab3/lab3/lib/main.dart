@@ -12,18 +12,20 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
           title: const Text(
             "Flutter Lab 03",
             style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.green,
           foregroundColor: Colors.white,
         ),
-        body: Column(
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Uzair Asif',
               style: TextStyle(
                 fontSize: 24,
@@ -31,8 +33,8 @@ class MyWidget extends StatelessWidget {
                 color: Colors.orange,
               ),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(width: 20),
+            const Text(
               '22-NTU-CS-1213',
               style: TextStyle(
                 fontSize: 24,
@@ -40,10 +42,12 @@ class MyWidget extends StatelessWidget {
                 color: Colors.orange,
               ),
             ),
-            Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0lBtoaipoqNb4tav3ZUUdREgVNv_BafUScA&s',
-              width: 200,
-              height: 200,
+            const SizedBox(width: 20),
+            Image.asset(
+              'assets/images/home.png',
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover,
             ),
           ],
         ),
