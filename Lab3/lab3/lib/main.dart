@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyWidget());
+  runApp(const MyWidget());
 }
 
 class MyWidget extends StatelessWidget {
@@ -11,14 +11,26 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AppBar(
-        title: const Text(
-          "Flutter Lab 03",
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Flutter Lab 03",
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.white,
         ),
-        centerTitle: true,
-        backgroundColor: Colors.black87,
-        foregroundColor: Colors.white,
+        body: const Center(
+          child: Text(
+            'Uzair Asif',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.orange,
+            ),
+          ),
+        ),
       ),
     );
   }
