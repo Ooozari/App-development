@@ -36,21 +36,26 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Container(
-          color: Colors.grey,
-          height: 200,
-          width: 200,
-          margin: const EdgeInsets.all(20),
-          child: const Center(
-            child: Text(
-              "Hello from Uzair!",
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
-              ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              color: Colors.red,
+              padding: const EdgeInsets.all(8),
+              child: Text("First"),
             ),
-          ),
+            Container(
+              color: Colors.green,
+              padding: const EdgeInsets.all(8),
+              child: Text("Second"),
+            ),
+            Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(8),
+              child: Text("Third"),
+            ),
+          ],
         ),
       ),
     );
