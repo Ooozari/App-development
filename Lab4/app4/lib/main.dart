@@ -33,18 +33,14 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 145, 202, 205),
       ),
-      body: Container(
-        width: 800,
-        height: 800,
-        color: Colors.blueGrey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(height: 90, width: 90, color: Colors.red),
-            Container(height: 90, width: 90, color: Colors.green),
-            Container(height: 90, width: 90, color: Colors.blue),
-          ],
+      body: const Center(
+        child: Text(
+          'Hello Flutter!',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
         ),
       ),
     );
