@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  return runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -23,38 +22,28 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        title: const Text(
+        title: Text(
           'Lab 4 Appbar',
           style: TextStyle(
-            fontSize: 24,
+            color: const Color.fromARGB(255, 15, 15, 15),
+            fontSize: 35.0,
             fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
           ),
         ),
         centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 145, 202, 205),
       ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: Container(
+        width: 800,
+        height: 800,
+        color: Colors.blueGrey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Container(
-              color: Colors.red,
-              padding: const EdgeInsets.all(8),
-              child: Text("First"),
-            ),
-            Container(
-              color: Colors.green,
-              padding: const EdgeInsets.all(8),
-              child: Text("Second"),
-            ),
-            Container(
-              color: Colors.blue,
-              padding: const EdgeInsets.all(8),
-              child: Text("Third"),
-            ),
+            Container(height: 90, width: 90, color: Colors.red),
+            Container(height: 90, width: 90, color: Colors.green),
+            Container(height: 90, width: 90, color: Colors.blue),
           ],
         ),
       ),
