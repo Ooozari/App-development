@@ -23,6 +23,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         title: const Text(
           'Lab 4 Appbar',
           style: TextStyle(
@@ -33,7 +35,24 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const Center(child: Text("Hello From Uzair!")),
+      body: Center(
+        child: Container(
+          color: Colors.grey,
+          height: 200,
+          width: 200,
+          margin: const EdgeInsets.all(20),
+          child: const Center(
+            child: Text(
+              "Hello from Uzair!",
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
