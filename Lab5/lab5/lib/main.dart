@@ -34,6 +34,58 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.lightBlue,
       ),
+      body: ListView(
+        children: const [
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.smartphone),
+            title: Text('SmartPhone'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.laptop),
+            title: Text('Laptop'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.tablet_mac),
+            title: Text('Tablet'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.watch),
+            title: Text('SmartWatch'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.headphones),
+            title: Text('Headphones'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.speaker),
+            title: Text('Bluetooth Speaker'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.tv),
+            title: Text('Smart TV'),
+            trailing: Icon(Icons.bookmark),
+          ),
+          ListTile(
+            iconColor: Colors.blueAccent,
+            leading: Icon(Icons.camera_alt),
+            title: Text('Camera'),
+            trailing: Icon(Icons.bookmark),
+          ),
+        ],
+      ),
     );
   }
 }
