@@ -33,45 +33,19 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 145, 202, 205),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // EdgeInsets.all
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Container(
-              color: Colors.red,
-              child: const Text(
-                "Padding: EdgeInsets.all(20)",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-
-          // EdgeInsets.symmetric
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-            child: Container(
-              color: Colors.green,
-              child: const Text(
-                "Padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10)",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-
-          // EdgeInsets.only
-          Padding(
-            padding: const EdgeInsets.only(left: 15, top: 40),
-            child: Container(
-              color: Colors.blue,
-              child: const Text(
-                "Padding: EdgeInsets.only(left: 15, top: 40)",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-        ],
+      body: Container(
+        width: 800,
+        height: 800,
+        color: Colors.blueGrey,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(height: 90, width: 90, color: Colors.red),
+            Container(height: 90, width: 90, color: Colors.green),
+            Container(height: 90, width: 90, color: Colors.blue),
+          ],
+        ),
       ),
     );
   }
