@@ -28,6 +28,17 @@ class _MyAppState extends State<MyApp> {
         fontWeight: FontWeight.bold,
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+      ),
+    ),
   );
 
   final ThemeData darkTheme = ThemeData(
@@ -42,6 +53,17 @@ class _MyAppState extends State<MyApp> {
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.deepPurple,
+        foregroundColor: Colors.white,
+        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
       ),
     ),
   );
@@ -68,7 +90,6 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-
         body: Builder(
           builder: (context) {
             final isDarkMode = Theme.of(context).brightness == Brightness.dark;
@@ -89,16 +110,18 @@ class _MyAppState extends State<MyApp> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'This paragraph demonstrates how text color, size, and weight can be dynamically adjusted based on the active theme.',
+                    'Now we have also customized ElevatedButtonTheme for both light and dark modes!',
                     style: TextStyle(
                       fontSize: 16,
                       color: isDarkMode ? Colors.white : Colors.grey[800],
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Switch between light and dark modes using the icon in the AppBar to see the text style changes instantly.',
-                    style: TextStyle(fontSize: 14, color: textColor),
+                  const SizedBox(height: 20),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Themed Button'),
+                    ),
                   ),
                 ],
               ),
