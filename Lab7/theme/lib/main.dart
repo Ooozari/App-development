@@ -14,18 +14,36 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool isDark = false;
 
-  // Light Theme
+  // ✅ Light Theme with AppBar customization
   final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.blue,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
   );
 
-  // Dark Theme
+  // ✅ Dark Theme with AppBar customization
   final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: Colors.deepPurple,
     scaffoldBackgroundColor: Colors.black,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.deepPurple,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
   );
 
   @override
@@ -51,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: const Center(
-          child: Text('Toggle Light/Dark Mode using the AppBar icon!'),
+          child: Text('AppBar theme customized for light and dark modes!'),
         ),
       ),
     );
