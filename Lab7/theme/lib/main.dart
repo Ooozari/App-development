@@ -14,8 +14,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool isDark = false;
 
-  // ✅ Light Theme with AppBar customization
   final ThemeData lightTheme = ThemeData(
+    useMaterial3: false,
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
@@ -30,8 +30,8 @@ class _MyAppState extends State<MyApp> {
     ),
   );
 
-  // ✅ Dark Theme with AppBar customization
   final ThemeData darkTheme = ThemeData(
+    useMaterial3: false,
     brightness: Brightness.dark,
     primaryColor: Colors.deepPurple,
     scaffoldBackgroundColor: Colors.black,
@@ -68,8 +68,42 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-        body: const Center(
-          child: Text('AppBar theme customized for light and dark modes!'),
+
+        body: Builder(
+          builder: (context) {
+            final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+            final textColor = isDarkMode ? Colors.white : Colors.black;
+
+            return Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Flutter Theme Customization',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: textColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'This paragraph demonstrates how text color, size, and weight can be dynamically adjusted based on the active theme.',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: isDarkMode ? Colors.white : Colors.grey[800],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Switch between light and dark modes using the icon in the AppBar to see the text style changes instantly.',
+                    style: TextStyle(fontSize: 14, color: textColor),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
