@@ -39,6 +39,13 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     ),
+    cardTheme: CardThemeData(
+      color: Colors.blue[50],
+      elevation: 5,
+      shadowColor: Colors.grey.withValues(alpha: 0.5),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+    ),
   );
 
   final ThemeData darkTheme = ThemeData(
@@ -65,6 +72,13 @@ class _MyAppState extends State<MyApp> {
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
+    ),
+    cardTheme: CardThemeData(
+      color: Colors.deepPurple[700],
+      elevation: 8,
+      shadowColor: Colors.deepPurpleAccent.withValues(alpha: 0.4),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
     ),
   );
 
@@ -97,33 +111,54 @@ class _MyAppState extends State<MyApp> {
 
             return Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Flutter Theme Customization',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: textColor,
-                      fontWeight: FontWeight.bold,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Flutter Theme Customization',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: textColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Now we have also customized ElevatedButtonTheme for both light and dark modes!',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: isDarkMode ? Colors.white : Colors.grey[800],
+                    const SizedBox(height: 10),
+                    Text(
+                      'Now we have also customized the CardTheme for both light and dark modes!',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: isDarkMode ? Colors.red : Colors.grey[800],
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Themed Button'),
+                    const SizedBox(height: 20),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Themed Button'),
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 20),
+                    Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'This is a themed card in ${isDark ? "Dark" : "Light"} mode.',
+                          style: TextStyle(fontSize: 16, color: textColor),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'Card themes control color, shape, elevation, and shadow.',
+                          style: TextStyle(fontSize: 16, color: textColor),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },
