@@ -9,7 +9,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: SliderExample());
+    return MaterialApp(
+      theme: ThemeData(
+        sliderTheme: SliderThemeData(
+          activeTrackColor: Colors.red,
+          inactiveTrackColor: Colors.purple.shade200,
+          thumbColor: Colors.purple,
+          trackHeight: 5,
+        ),
+      ),
+      home: SliderExample(),
+    );
   }
 }
 
@@ -17,6 +27,8 @@ class SliderExample extends StatefulWidget {
   @override
   State<SliderExample> createState() => _SliderExampleState();
 }
+
+enum Status { passed, failed }
 
 class _SliderExampleState extends State<SliderExample> {
   double _currentSliderValue = 10;
@@ -31,8 +43,7 @@ class _SliderExampleState extends State<SliderExample> {
           min: 0,
           max: 100,
           divisions: 100,
-          label: _currentSliderValue.round().toString(),
-          onChanged: (double value) {
+          onChanged: (value) {
             setState(() {
               _currentSliderValue = value;
             });
