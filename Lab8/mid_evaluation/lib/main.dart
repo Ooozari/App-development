@@ -4,56 +4,54 @@ void main() {
   runApp(const MyApp());
 }
 
-const String appName = "Themed App";
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: appName,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: const Color.fromARGB(255, 2, 119, 189),
-        fontFamily: 'Georgia',
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          headlineSmall: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-          bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-        ),
-      ),
-      home: const HomePage(),
-    );
+    return MaterialApp(home: const BoxDecorationExample());
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class BoxDecorationExample extends StatelessWidget {
+  const BoxDecorationExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(appName)),
+      appBar: AppBar(title: const Text("BoxDecoration Example")),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "DisplayLarge Text",
-              style: Theme.of(context).textTheme.displayLarge,
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+            color: const Color(0xff7c94b6), // Background color
+            image: const DecorationImage(
+              image: NetworkImage(
+                'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+              ),
+              fit: BoxFit.cover, // Cover the entire box
             ),
-            const SizedBox(height: 20),
-            Text(
-              "HeadlineSmall Text",
-              style: Theme.of(context).textTheme.headlineSmall,
+            border: Border.all(color: Colors.black, width: 1),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(2),
+              bottomLeft: Radius.circular(8),
+              bottomRight: Radius.circular(20),
             ),
-            const SizedBox(height: 20),
-            Text(
-              "BodyMedium Example",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.green,
+                blurRadius: 10,
+                offset: Offset(5, 5),
+              ),
+              BoxShadow(
+                color: Colors.red,
+                blurRadius: 10,
+                offset: Offset(2, 2),
+              ),
+            ],
+          ),
         ),
       ),
     );
