@@ -24,7 +24,7 @@ class _AddNotesScreenState extends State<AddNotesScreen> {
               controller: notesController,
               maxLines: 5,
               decoration: const InputDecoration(
-                labelText: "Enter your notes",
+                hintText: "Enter notes here...",
                 border: OutlineInputBorder(),
               ),
             ),

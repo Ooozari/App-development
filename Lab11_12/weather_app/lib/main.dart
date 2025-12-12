@@ -13,14 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      // THEME SETTINGS
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
           centerTitle: true,
         ),
-        useMaterial3: false,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
 
       home: const HomeScreen(),
@@ -28,18 +27,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// -------------------------------------------------------
-// HOME SCREEN
-// -------------------------------------------------------
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Notepad"),
-      ),
+      appBar: AppBar(title: const Text("Notepad")),
 
       body: Center(
         child: Column(
@@ -57,10 +51,7 @@ class HomeScreen extends StatelessWidget {
               child: const Text("Add Notes"),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Button 2"),
-            ),
+            ElevatedButton(onPressed: () {}, child: const Text("Save Notes")),
           ],
         ),
       ),
