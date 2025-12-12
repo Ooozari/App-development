@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_notes_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +16,11 @@ class MyApp extends StatelessWidget {
       // THEME SETTINGS
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blue, // AppBar background
-          foregroundColor: Colors.white, // Title + Icon color
-          centerTitle: true, // Center app bar text
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          centerTitle: true,
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: false,
       ),
 
       home: const HomeScreen(),
@@ -27,20 +28,39 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// -------------------------------------------------------
+// HOME SCREEN
+// -------------------------------------------------------
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Notepad")),
+      appBar: AppBar(
+        title: const Text("Notepad"),
+      ),
+
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(onPressed: () {}, child: const Text("Add Notes")),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddNotesScreen(),
+                  ),
+                );
+              },
+              child: const Text("Add Notes"),
+            ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: () {}, child: const Text("Save Notes")),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Button 2"),
+            ),
           ],
         ),
       ),
