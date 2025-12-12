@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'add_notes_screen.dart';
+import 'saved_notes_screen.dart';
+
+List<String> allNotes = [];
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +24,6 @@ class MyApp extends StatelessWidget {
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-
       home: const HomeScreen(),
     );
   }
@@ -51,7 +53,18 @@ class HomeScreen extends StatelessWidget {
               child: const Text("Add Notes"),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: () {}, child: const Text("Save Notes")),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SavedNotesScreen(),
+                  ),
+                );
+              },
+              child: const Text("Saved Notes"),
+            ),
           ],
         ),
       ),
