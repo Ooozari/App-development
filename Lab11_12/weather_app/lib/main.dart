@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'add_notes_screen.dart';
-import 'saved_notes_screen.dart';
+import 'WeatherPage.dart';
 
-List<String> allNotes = [];
-
-void main() {
-  runApp(const MyApp());
+void main(){
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,60 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
           centerTitle: true,
-        ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        )
       ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Notepad")),
-
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AddNotesScreen(),
-                  ),
-                );
-              },
-              child: const Text("Add Notes"),
-            ),
-            const SizedBox(height: 20),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SavedNotesScreen(),
-                  ),
-                );
-              },
-              child: const Text("Saved Notes"),
-            ),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: WeatherPage(),
     );
   }
 }
